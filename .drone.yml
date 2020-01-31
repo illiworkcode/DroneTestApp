@@ -6,7 +6,7 @@ steps:
   - name: test
     image: alpine:3.9
     commands:
-      - var tag=git describe --tags
+      - tag=git describe --tags
       - echo $tag
     when:
       branch:

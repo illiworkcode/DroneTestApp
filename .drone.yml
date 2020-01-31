@@ -10,8 +10,6 @@ steps:
     when:
       branch:
         - master
-      event:
-        - tag
 trigger:
   branch:
     - master

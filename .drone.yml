@@ -3,6 +3,11 @@ kind: pipeline
 name: default
 
 steps:
+  - name: fetch
+    image: alpine/git
+    commands:
+      - git fetch --tags
+
   - name: test
     image: alpine:3.9
     commands:

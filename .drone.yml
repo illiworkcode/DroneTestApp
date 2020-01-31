@@ -3,20 +3,33 @@ kind: pipeline
 name: default
 
 steps:
-  - name: fetch
-    image: alpine/git
-    commands:
-      - git fetch --tags
-      - tag=`git describe --tags`
-      - export CTAG=$tag
+#  - name: fetch
+#    image: alpine/git
+#    commands:
+#      - git fetch --tags
+#      - tag=`git describe --tags`
 
-  - name: test
-    image: alpine:3.9
-    commands:
-      - echo ${DRONE_TAG}
-    when:
-      branch:
-        - master
+ - name: test
+   image: alpine:3.9
+   commands:
+     - echo ${DRONE_TAG}
+     - echo ${CTAG}
+#   when:
+#     event:
+#       - tag
+
+#  - name: docker
+#    image: plugins/docker
+#    settings:
+#      registry: registry:5000
+#      repo: registry:5000
+##      force_tag: true
+#      use_cache: true
+#      auto_tag: true
+##      auto_tag_suffix: linux-amd64
+#    volumes:
+#      - name: docker
+#        path: /var/lib/docker
 trigger:
   branch:
-    - master
+    - dev

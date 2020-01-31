@@ -16,6 +16,7 @@ steps:
    image: alpine:3.9
    commands:
      - echo dev
+     - echo dev2
    when:
      event:
        - tag

@@ -1,0 +1,14 @@
+---
+kind: pipeline
+name: default
+
+steps:
+  - name: test
+    image: alpine:3.9
+    commands:
+      - echo 123
+    when:
+      branch:
+        - master
+      event:
+        - tag

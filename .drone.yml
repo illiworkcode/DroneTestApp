@@ -2,6 +2,9 @@
 kind: pipeline
 name: default
 
+clone:
+  disable: true
+
 steps:
 #  - name: fetch
 #    image: alpine/git
@@ -12,8 +15,7 @@ steps:
  - name: test
    image: alpine:3.9
    commands:
-     - echo ${DRONE_TAG}
-     - echo ${CTAG}
+     - echo dev
 #   when:
 #     event:
 #       - tag

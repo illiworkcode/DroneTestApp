@@ -14,12 +14,16 @@ steps:
 
  - name: test
    image: alpine:3.9
+   secrets: [ test ]
    commands:
      - echo dev
-     - echo dev2
+     - echo $TEST
+     - echo ${DRONE_TAG}
    when:
-     event:
-       - tag
+     branch:
+       - dev
+#     event:
+#       - tag
 
 #  - name: docker
 #    image: plugins/docker
@@ -33,6 +37,7 @@ steps:
 #    volumes:
 #      - name: docker
 #        path: /var/lib/docker
+
 trigger:
   branch:
     - master

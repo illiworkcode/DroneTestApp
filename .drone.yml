@@ -6,7 +6,8 @@ steps:
   - name: test
     image: alpine:3.9
     commands:
-      - echo ${DRONE_TAG##v}
+      - tag = git describe --tags
+      - echo $tag
     when:
       branch:
         - master

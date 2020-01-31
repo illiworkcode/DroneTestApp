@@ -17,7 +17,7 @@ steps:
    secrets: [ test ]
    commands:
      - echo dev
-     - echo $TEST
+     - export DRONE_TAG=v1.5.5
      - echo ${DRONE_TAG=latest}
    when:
      branch:

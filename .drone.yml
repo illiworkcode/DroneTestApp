@@ -7,11 +7,13 @@ steps:
     image: alpine/git
     commands:
       - git fetch --tags
+      - tag=`git describe --tags`
+      - export CTAG=$tag
 
   - name: test
     image: alpine:3.9
     commands:
-      - tag=`git describe --tags`
+      - echo $CTAG
       - echo $tag
     when:
       branch:

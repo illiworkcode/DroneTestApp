@@ -18,7 +18,7 @@ steps:
    commands:
      - echo dev
      - export DRONE_TAG=v1.5.5
-     - echo ${DRONE_TAG=latest}
+     - echo $${DRONE_TAG=latest}
    when:
      branch:
        - master

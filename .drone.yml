@@ -17,8 +17,8 @@ steps:
    commands:
      - echo dev
    when:
-     branch:
-       - master
+     event:
+       - tag
 
 #  - name: docker
 #    image: plugins/docker

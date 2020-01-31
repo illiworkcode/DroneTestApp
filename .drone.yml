@@ -13,8 +13,7 @@ steps:
   - name: test
     image: alpine:3.9
     commands:
-      - echo $CTAG
-      - echo $tag
+      - echo ${DRONE_TAG}
     when:
       branch:
         - master

@@ -12,3 +12,6 @@ steps:
         - master
       event:
         - tag
+trigger:
+  branch:
+    - master

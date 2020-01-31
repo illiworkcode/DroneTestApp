@@ -14,13 +14,12 @@ steps:
 
  - name: test
    image: alpine:3.9
-   secrets: [ test ]
    commands:
      - echo dev
      - echo $${DRONE_TAG=latest}
    when:
-     branch:
-       - master
+     event:
+       - tag
 #     event:
 #       - tag
 

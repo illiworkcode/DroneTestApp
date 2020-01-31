@@ -21,7 +21,7 @@ steps:
      - echo ${DRONE_TAG}
    when:
      branch:
-       - dev
+       - master
 #     event:
 #       - tag
 

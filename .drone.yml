@@ -6,7 +6,7 @@ steps:
   - name: test
     image: alpine:3.9
     commands:
-      - echo 123
+      - echo ${DRONE_TAG}
     when:
       branch:
         - master

@@ -18,7 +18,7 @@ steps:
      - echo dev
    when:
      branch:
-       - dev
+       - master
 
 #  - name: docker
 #    image: plugins/docker

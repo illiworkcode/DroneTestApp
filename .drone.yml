@@ -16,9 +16,9 @@ steps:
    image: alpine:3.9
    commands:
      - echo dev
-#   when:
-#     branch:
-#       - dev
+   when:
+     branch:
+       - dev
 
 #  - name: docker
 #    image: plugins/docker

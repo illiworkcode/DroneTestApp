@@ -15,10 +15,8 @@ steps:
  - name: test
    image: alpine:3.9
    commands:
-     - echo $${DRONE_TAG=latest}
-   when:
-     event:
-       - tag
+     - echo $${DRONE_BRANCH}
+     - echo $${DRONE_TAG}
 #     event:
 #       - tag
 
